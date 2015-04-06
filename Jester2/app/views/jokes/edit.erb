@@ -1,6 +1,16 @@
 <div class="container">
   <h4 class="center underline">Edit your joke!</h4>
 
+  <ul id="form">
+    <%= form_for @joke do |f|%>
+    <li>Line 1:</li>
+    <li><%= f.text_field :line1, id: "text"%></li>
+    <li>Line 2:</li>
+    <li><%= f.text_field :line2, id: "text"%></li>
+    <%= submit_tag "TELL THE WORLD" %>
+    <% end %>
+  </ul>
+
   <form action="/jokes/<%=@joke.id%>" method='post'>
     <input id="text" type='hidden' name='_method' value='put'/>
     <input id="text" type='text' placeholder='Line 1' name='line1' value="<%=@joke.line1%>" /><br>

@@ -1,16 +1,12 @@
 <div class="container">
   <h4 class="center underline">Got a good joke?</h4>
-  <%= form_for @new_joke do |f|%>
-    Line 1: <%= f.text_field :line1 %>
-    Line 2: <%= f.text_field :line2 %>
-  <%= submit_tag "TELL THE WORLD" %>
-  <% end %>
+  <ul id="form">
+    <%= form_for @new_joke do |f|%>
+      <li>Line 1:</li>
+      <li><%= f.text_field :line1, id: "text"%></li>
+      <li>Line 2:</li>
+      <li><%= f.text_field :line2, id: "text"%></li>
+    <%= submit_tag "TELL THE WORLD" %>
+    <% end %>
+  </ul>
 </div>
-
-
-<%= form_tag '/jokes' do %>
-  Line 1: <%= text_field_tag :line1 %>
-  Line 2: <%= text_field_tag :line2 %>
-  <%= hidden_field :user_id, value: current_user.id %>
-<%= submit_tag "TELL THE WORLD" %>
-<% end %>

@@ -129,7 +129,15 @@ body{
   margin-left: 50px;
 }
 
-input#text {
+#form {
+  list-style-type: none;
+}
+
+#form li {
+  margin: 5px auto;
+}
+
+#text {
   width: 800px;
 }
 
