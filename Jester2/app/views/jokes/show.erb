@@ -13,13 +13,15 @@
 
   <div class="comments">
     <div class="comment_box">
-      <%= erb :'comments/new', locals: {joke_id: @joke.id}%>
+      <%= render partial: "comments/new", locals: {joke_id: @joke.id} %>
     </div>
 
     <div class="comment_list">
       <ul>
         <% @joke.comments.each do |comment| %>
-          <li><%= erb :'comments/show', locals: {comment: comment} %></li>
+          <li>
+            <%= render partial: "comments/show", locals: {comment: comment} %>
+          </li>
         <% end %>
       </ul>
     </div>
