@@ -1,8 +1,8 @@
 <div class="container">
   <h4 class="center underline">Got a good joke?</h4>
-  <form action="/jokes/new" method="post">
-    <input id="text" type="text" placeholder="Line 1" name='line1'/><br>
-    <input id="text" type="text" placeholder="Line 2 (optional)" name='line2'/><br>
-    <input type="submit" value="TELL THE WORLD" />
-  </form>
+  <%= form_tag '/jokes' do %>
+    Line 1: <%=text_field_tag :line1 %>
+    Line 2: <%= text_field_tag :line2 %>
+  <%= submit_tag "TELL THE WORLD" %>
+  <% end %>
 </div>
