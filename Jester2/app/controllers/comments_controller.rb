@@ -1,13 +1,12 @@
 # TODO: Change to rails controller
-# Get Routes
-get '/joke/:joke_id/comments/:id/edit' do
-  @comment = Comment.find_by(joke_id: params[:joke_id], id: params[:id])
-  erb :'comments/edit'
+class CommentsController < ApplicationController
+
 end
 
-get '/joke/:joke_id/comments/:id/delete' do
-  @comment =Comment.find_by(joke_id: params[:joke_id], id: params[:id])
-  erb :'comments/delete'
+# Get Routes
+get '/comments/:id/edit' do
+  @comment = Comment.find_by(joke_id: params[:joke_id], id: params[:id])
+  erb :'comments/edit'
 end
 
 # Update Routes
