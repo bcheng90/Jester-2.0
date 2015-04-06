@@ -1,0 +1,10 @@
+<!-- TODO: Style out the br -->
+<div class="container">
+  <h2 class="center">What do we call you, Jester?</h2>
+  <%= form_for :user, url: '/users' do |f| %>
+    Jester Name: <%= f.text_field :name %>
+    Password: <%= f.password_field :password %>
+    Password Confirmation: <%= f.password_field :password_confirmation %>
+    <%= f.submit "Submit" %>
+  <% end %>
+</div>

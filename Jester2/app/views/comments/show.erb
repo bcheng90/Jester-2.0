@@ -1,0 +1,11 @@
+<span class="small">
+  <a href="/users/<%=comment.user_id%>"><%=comment.user.name%></a>
+  <%=time(comment)%> days ago</span><br>
+  <div id="message">
+    <%= comment.message %><br>
+  </div>
+  <% if current_user.id == comment.user.id %>
+    <span class="small"><a href='/jokes/<%=@joke.id%>/comments/<%=comment.id%>/edit'>Edit</a>
+    <a id="del-comment" href='/jokes/<%=@joke.id%>/comments/<%=comment.id%>/delete'>Delete</a><br>
+  <% end %>
+</span>
