@@ -9,9 +9,9 @@ class JokesController < ApplicationController
 
   def create
     # TODO: Fix new joke
-    new_joke = Joke.new(line1: params[:line1], line2: params[:line2], user_id: current_user.id)
+    new_joke = Joke.new(joke_params)
     if new_joke.save
-      redirect "/jokes/#{new_joke.id}"
+      redirect_to "/jokes/#{new_joke.id}"
     else
       [404, "WHY SO SERIOUS?"]
     end
@@ -20,6 +20,6 @@ class JokesController < ApplicationController
   private
 
   def joke_params
-    params.require(:joke).permit(:line1, :line2, :user_id)
+    params.require(:joke).permit(:line1, :line2).merge(user_id: current_user.id)
   end
 end
