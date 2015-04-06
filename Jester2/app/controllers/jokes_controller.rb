@@ -5,6 +5,11 @@ class JokesController < ApplicationController
   end
 
   def new
+    @new_joke = Joke.new
+  end
+
+  def edit
+    @joke = Joke.find_by(id: params[:id])
   end
 
   def create
@@ -15,6 +20,14 @@ class JokesController < ApplicationController
     else
       [404, "WHY SO SERIOUS?"]
     end
+  end
+
+  def update
+
+  end
+
+  def destroy
+
   end
 
   private
