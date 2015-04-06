@@ -2,7 +2,7 @@
   <% if current_user.id == @joke.user.id %>
     <div class="edit">
       <a href='/jokes/<%=@joke.id%>/edit'>Edit</a> |
-      <a href='/jokes/<%=@joke.id%>/delete'>Delete</a>
+      <%= link_to 'Destroy', joke_path(@joke.id), method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   <% end %>
   <h1><%=@joke.line1%></h1>

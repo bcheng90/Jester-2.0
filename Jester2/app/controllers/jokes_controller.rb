@@ -27,7 +27,8 @@ class JokesController < ApplicationController
   end
 
   def destroy
-
+    Joke.find(params[:id]).destroy
+    redirect_to "/"
   end
 
   private
