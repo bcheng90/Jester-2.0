@@ -11,12 +11,12 @@
     <ul class="left">
       <li id="list-header"><a href="/">Jester</a></li>
       <% if current_user %>
-      <li id="list-header"> | <a href="/joke/new">New</a></li>
+      <li id="list-header"> | <a href="/jokes/new">New</a></li>
       <% end %>
     </ul>
     <ul class="right">
       <% if current_user %>
-        <li id="list-header"><a href="/user/<%=current_user.id%>"><%=current_user.name%></a></li> |
+        <li id="list-header"><a href="/users/<%=current_user.id%>"><%=current_user.name%></a></li> |
         <li id="list-header"><a href="/logout">Logout</a></li>
       <% else %>
         <li id="list-header"><a href="/login">Login</a></li> |
@@ -24,7 +24,7 @@
       <% end %>
     </ul>
   </header>
-  <img id="haha" src="/imgs/laugh.png">
+  <%= image_tag("laugh.png", id: "haha") %>
 <%= yield %>
 
 </body>
