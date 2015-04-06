@@ -32,7 +32,7 @@
 
 header{
   height: 55px;
-  background: url(/imgs/joker.jpg);
+  background: url(joker.jpg);
   background-position: -5px;
   background-repeat: no-repeat;
   background-color: black;
@@ -88,7 +88,7 @@ body{
   margin-left: 85%;
   border: 2px solid #8e44ad;
   border-radius: 100%;
-  background: url(/imgs/lego.jpg);
+  background: url(lego.jpg);
   background-position: -5px -5px;
   background-repeat: no-repeat;
   background-size: 120%;
