@@ -1,0 +1,13 @@
+<ul>
+  <% @user.comments.order(:created_at).reverse.each do |comment|%>
+  <li>
+    <span class="small">
+      <a href="/users/<%=comment.user.id%>"><%=comment.user.name%></a> said "<%= comment.message %>" for <a href="/jokes/<%= comment.joke_id %>"> this joke | <%=time(comment)%> moons ago</a><br>
+      <% if current_user.id == comment.user_id %>
+        <span class="small"><a href='/jokes/<%=comment.joke_id%>/comments/<%=comment.id%>/edit'>Edit</a>
+        <a href='/jokes/<%=comment.joke_id%>/comments/<%=comment.id%>/delete'>Delete</a><br>
+      <% end %>
+    </span>
+  </li>
+  <% end %>
+</ul>
