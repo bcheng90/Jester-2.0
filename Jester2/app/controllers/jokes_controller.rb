@@ -23,7 +23,12 @@ class JokesController < ApplicationController
   end
 
   def update
-
+    joke = Joke.find_by(id: params[:id])
+     if joke.update(joke_params)
+       redirect_to "/"
+     else
+       [404, "WHY SO SERIOUS?"]
+     end
   end
 
   def destroy
