@@ -8,9 +8,9 @@
 </div>
 
 
-  <%= form_tag '/jokes' do %>
-    Line 1: <%= text_field_tag :line1 %>
-    Line 2: <%= text_field_tag :line2 %>
-    <%= hidden_field :user_id, value: current_user.id %>
-  <%= submit_tag "TELL THE WORLD" %>
-  <% end %>
+<%= form_tag '/jokes' do %>
+  Line 1: <%= text_field_tag :line1 %>
+  Line 2: <%= text_field_tag :line2 %>
+  <%= hidden_field :user_id, value: current_user.id %>
+<%= submit_tag "TELL THE WORLD" %>
+<% end %>
