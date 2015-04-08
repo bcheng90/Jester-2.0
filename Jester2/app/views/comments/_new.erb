@@ -1,6 +1,13 @@
-<form id="add_comment" action="/comments" method="post">
+<!-- <form id="add_comment" action="/comments" method="post">
   <input type='hidden' name='user_id' value='<%= current_user.id %>'>
   <input type="hidden" name="joke_id" value="<%= joke_id %>">
   <textarea name="message" placeholder="Enter your message" rows='6' cols='50' ></textarea><br>
   <input type="submit">
-</form>
+</form> -->
+
+<ul id="form">
+  <%= form_for @new_comment do |f|%>
+    <li><%= f.text_field :message, id: "text"%></li>
+  <%= submit_tag "Submit" %>
+  <% end %>
+</ul>

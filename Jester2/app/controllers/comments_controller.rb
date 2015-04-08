@@ -1,12 +1,28 @@
 # TODO: Change to rails controller
 class CommentsController < ApplicationController
+  def new
+    @new_comment = Comment.new
+  end
+
   def edit
     @comment = Comment.find_by(id: params[:id])
+  end
+
+  def create
+    new_comment = Comment.new(comment_params)
+    new_comment.save
+
   end
 
   def destroy
     Comment.find(params[:id]).destroy
     redirect_to joke_path
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:message).merge(user_id: current_user.id, joke_id: joke_id)
   end
 end
 
