@@ -1,17 +1,17 @@
 # TODO: Change to rails controller
 class CommentsController < ApplicationController
-  def new
-    @new_comment = Comment.new
-  end
 
   def edit
     @comment = Comment.find_by(id: params[:id])
   end
 
   def create
-    new_comment = Comment.new(comment_params)
-    new_comment.save
-
+    @new_comment = Comment.new(comment_params)
+    if @new_comment.save!
+      redirect_to "/jokes/#{@new_comment.joke_id}"
+    else
+      [404, "WHY SO SERIOUS?"]
+    end
   end
 
   def destroy
@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:message).merge(user_id: current_user.id, joke_id: joke_id)
+    params.require(:comment).permit(:message).merge(user_id: current_user.id, joke_id: params[:joke_id])
   end
 end
 

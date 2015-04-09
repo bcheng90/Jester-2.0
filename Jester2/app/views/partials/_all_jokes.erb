@@ -6,9 +6,11 @@
     <br>
     <span class="small">
       <a href="/jokes/<%= joke.id %>"><%=joke.comments.count%> comments</a> and <%= rand(1..10)%> laughes for <a href="/users/<%=joke.user.id%>"><%=joke.user.name%></a> | <a href="/jokes/<%= joke.id %>"><%=time(joke)%> moons ago</a>
-      <% if current_user.id == joke.user.id %>
-        <%= link_to 'Edit', edit_joke_path(joke.id)%> |
-        <%= link_to 'Delete', joke_path(joke.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if current_user %>
+        <% if current_user.id == joke.user.id %>
+          <%= link_to 'Edit', edit_joke_path(joke.id)%> |
+          <%= link_to 'Delete', joke_path(joke.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       <% end %>
     </span>
     <br>

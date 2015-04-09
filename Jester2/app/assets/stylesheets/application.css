@@ -137,6 +137,11 @@ body{
   margin: 5px auto;
 }
 
+ul li {
+  list-style-type: none;
+  padding-bottom: 10px;
+}
+
 #text {
   width: 800px;
 }

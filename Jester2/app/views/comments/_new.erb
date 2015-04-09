@@ -6,8 +6,10 @@
 </form> -->
 
 <ul id="form">
+  <%= joke_id %>
   <%= form_for @new_comment do |f|%>
     <li><%= f.text_field :message, id: "text"%></li>
+    <%= hidden_field_tag "joke_id", joke_id %>
   <%= submit_tag "Submit" %>
   <% end %>
 </ul>

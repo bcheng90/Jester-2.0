@@ -38,7 +38,7 @@ Joke.create(line1: "There were two muffins in an oven. One says 'man it's hot in
 Joke.create(line1: "A magician was driving down the road when he turned into a driveway.", user_id: 13)
 Joke.create(line1: "Why aren't there any knock knock jokes about freedom?", line2: "Because freedom rings", user_id: 14)
 Joke.create(line1: "I went to a zoo the other day. It was completely empty, except for a single dog. It was a Shih Tzu.", user_id: 15)
-Joke.create(line1: "How many DBC students does it take to switch a lightbulb?", line2: "Two students pairing, one coach helping, and finger snaps ready when it's installed.", user_id: 16)
+Joke.create(line1: "rawrwrwrr", user_id: 16)
 Joke.create(line1: "What happened to the cow that jumped over the barbed wire fence?", line2: "Udder destruction", user_id: 17)
 Joke.create(line1: "How many 'Hoa's does it take to switch a lightbulb?", line2: "Hoane.", user_id: 18)
 ###Ashi, I repeated dan's joke on accident for yours! Mannnnnn. I'll try to think of another.

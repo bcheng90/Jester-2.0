@@ -1,7 +1,7 @@
 <div class="container">
   <% if current_user.id == @joke.user.id %>
     <div class="edit">
-      <%= link_to 'Edit', edit_joke_path(joke.id)%> |
+      <%= link_to 'Edit', edit_joke_path(@joke.id)%> |
       <%= link_to 'Delete', joke_path(@joke.id), method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   <% end %>

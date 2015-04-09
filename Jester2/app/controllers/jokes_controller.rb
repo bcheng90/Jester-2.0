@@ -2,6 +2,7 @@
 class JokesController < ApplicationController
   def show
     @joke = Joke.find_by(id: params[:id])
+    @new_comment = Comment.new
   end
 
   def new
