@@ -2,7 +2,9 @@
   <% @comments.order(:created_at).reverse.each do |comment|%>
   <li>
     <span class="small">
-      <a href="/users/<%=comment.user.id%>"><%=comment.user.name%></a> said "<%= comment.message %>" for <a href="/jokes/<%= comment.joke_id%>"> this joke | <%=time(comment)%> moons ago</a>
+      <%= link_to "#{comment.user.name}", user_path(comment.user.id) %>
+      said "<%= comment.message %>" for
+      <%= link_to "this joke | #{time(comment)} moons ago", joke_path(comment.joke_id)%>
     </span>
   </li>
   <% end %>

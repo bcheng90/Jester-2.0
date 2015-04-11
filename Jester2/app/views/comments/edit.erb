@@ -6,10 +6,4 @@
     <%= hidden_field_tag "joke_id", @comment.joke_id %>
     <%= submit_tag "Submit" %>
   <% end %>
-  <form action="/jokes/<%=@comment.joke_id%>/comments/<%=@comment.id%>/edit" method='post'>
-    <input type='hidden' name='_method' value='put'/>
-    <input id="text" type='text' placeholder='Edit Comment' name='message' value="<%=@comment.message%>" /><br>
-  <br>
-    <input type='submit' value='Apply Changes'/>
-  </form>
 </div>
