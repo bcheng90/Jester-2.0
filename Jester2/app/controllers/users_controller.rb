@@ -1,4 +1,3 @@
-# TODO: Change to rails controller
 class UsersController < ApplicationController
 
   def show
