@@ -1,13 +1,15 @@
 <div class="container">
   <% if current_user.id == @joke.user.id %>
     <div class="edit">
-      <%= link_to 'Edit', edit_joke_path(@joke.id)%> |
+      <%= link_to 'Edit', edit_joke_path(@joke.id), locals: {joke_id: @joke.id} %> |
       <%= link_to 'Delete', joke_path(@joke.id), method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   <% end %>
   <h1><%=@joke.line1%></h1>
   <span class="small">
-    <a href="/jokes/<%= @joke.id %>"><%=@joke.comments.count%> comments</a> and <%= rand(1..10)%> laughes for <a href="/users/<%=@joke.user.id%>"><%=@joke.user.name%></a> | <a href="/jokes/<%= @joke.id %>"><%=time(@joke)%> moons ago</a>
+    <%= link_to "#{@joke.comments.count} comments", joke_path(@joke.id)%>
+    and <%= rand(1..10)%> laughes for
+    <%= link_to "#{@joke.user.name}", user_path(@joke.user.id)%> | <%= link_to "#{time(@joke)} moons ago", joke_path(@joke.id)%>
   </span>
   <p class="hr"><%=@joke.line2%></p>
 

@@ -8,7 +8,17 @@ class CommentsController < ApplicationController
   def create
     @new_comment = Comment.new(comment_params)
     if @new_comment.save!
-      redirect_to "/jokes/#{@new_comment.joke_id}"
+      redirect_to joke_path(@new_comment.joke_id)
+    else
+      [404, "WHY SO SERIOUS?"]
+    end
+  end
+
+  def update
+    @comment = Comment.find_by(id: params[:id])
+    @comment.update(comment_params)
+    if @comment.save!
+      redirect_to joke_path(@comment.joke_id)
     else
       [404, "WHY SO SERIOUS?"]
     end
