@@ -9,7 +9,7 @@
   <span class="small">
     <%= link_to "#{@joke.comments.count} comments", joke_path(@joke.id)%>
     and <%= rand(1..10)%> laughes for
-    <%= link_to "#{@joke.user.name}", user_path(@joke.user.id)%> | <%= link_to "#{time(@joke)} moons ago", joke_path(@joke.id)%>
+    <%= link_to "#{@joke.user.name}", user_path(@joke.user.id)%> | <%= link_to "#{time(@joke)} ago", joke_path(@joke.id)%>
   </span>
   <p class="hr"><%=@joke.line2%></p>
 

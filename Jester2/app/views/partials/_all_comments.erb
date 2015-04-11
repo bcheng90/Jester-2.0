@@ -4,7 +4,7 @@
     <span class="small">
       <%= link_to "#{comment.user.name}", user_path(comment.user.id) %>
       said "<%= comment.message %>" for
-      <%= link_to "this joke | #{time(comment)} moons ago", joke_path(comment.joke_id)%>
+      <%= link_to "this joke | #{time(comment)} ago", joke_path(comment.joke_id)%>
     </span>
   </li>
   <% end %>

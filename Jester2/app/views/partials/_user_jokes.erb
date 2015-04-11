@@ -4,7 +4,7 @@
       <%= link_to "#{joke.line1}", joke_path(joke.id)%>
       <br>
       <span class="small">
-        <%= link_to "#{time(joke)} days ago", joke_path(joke.id)%> |
+        <%= link_to "#{time(joke)} ago", joke_path(joke.id)%> |
         <%= link_to "#{joke.comments.count} comments", joke_path(joke.id)%>
         <% if current_user.id == @user.id %>
           <%= link_to 'Edit', edit_joke_path(joke.id)%> |
