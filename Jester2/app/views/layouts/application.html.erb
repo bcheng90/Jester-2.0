@@ -25,14 +25,14 @@
         </li> |
         <li id="list-header">
           <!-- TODO: Broked the logout -->
-          <%= link_to 'Logout', session_path, method: :delete, data: { confirm: 'Logging out?' } %>
+          <%= link_to 'Logout', logout_path, data: { confirm: 'Logging out?' } %>
         </li>
       <% else %>
         <li id="list-header">
-          <%= link_to "", new_session_path %>
+          <%= link_to "Login", login_path %>
         </li> |
         <li id="list-header">
-          <%= link_to "Sign up", new_user_path %>
+          <%= link_to "Sign up", signup_path %>
         </li>
       <% end %>
     </ul>
