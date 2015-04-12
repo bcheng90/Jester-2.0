@@ -1,6 +1,6 @@
 <!-- TODO: Take our the br later in styling -->
 <ol>
-  <% @jokes.order(:created_at).reverse.each do |joke| %>
+  <% @jokes_recent.each do |joke| %>
   <li>
     <%= link_to "#{joke.line1}", joke_path(joke.id) %>
     <br>
