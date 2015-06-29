@@ -1,7 +1,7 @@
-# TODO: Change to rails controller
 class JokesController < ApplicationController
   def show
     @joke = Joke.find_by(id: params[:id])
+    @new_comment = Comment.new
   end
 
   def new
@@ -15,7 +15,7 @@ class JokesController < ApplicationController
   def create
     # TODO: Fix new joke
     new_joke = Joke.new(joke_params)
-    if new_joke.save
+    if new_joke.save!
       redirect_to "/jokes/#{new_joke.id}"
     else
       [404, "WHY SO SERIOUS?"]

@@ -2,10 +2,14 @@
   <% @user.comments.order(:created_at).reverse.each do |comment|%>
   <li>
     <span class="small">
-      <a href="/users/<%=comment.user.id%>"><%=comment.user.name%></a> said "<%= comment.message %>" for <a href="/jokes/<%= comment.joke_id %>"> this joke | <%=time(comment)%> moons ago</a><br>
-      <% if current_user.id == comment.user_id %>
-        <span class="small"><a href='/jokes/<%=comment.joke_id%>/comments/<%=comment.id%>/edit'>Edit</a>
-        <a href='/jokes/<%=comment.joke_id%>/comments/<%=comment.id%>/delete'>Delete</a><br>
+      <%= link_to "#{comment.user.name}", user_path(comment.user.id) %> said "<%= comment.message %>" for
+      this joke
+      <%= link_to "#{time(comment)} ago", joke_path(comment.joke_id)%><br>
+      <% if current_user %>
+        <% if current_user.id == comment.user_id %>
+            <%= link_to "Edit", edit_comment_path(comment.id)%>
+            <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       <% end %>
     </span>
   </li>

@@ -1,11 +1,13 @@
 <span class="small">
-  <a href="/users/<%=comment.user_id%>"><%=comment.user.name%></a>
+  <%= link_to "#{comment.user.name}", user_path(comment.user_id) %>
   <%=time(comment)%> days ago</span><br>
   <div id="message">
     <%= comment.message %><br>
   </div>
-  <% if current_user.id == comment.user.id %>
-    <span class="small"><a href='/jokes/<%=@joke.id%>/comments/<%=comment.id%>/edit'>Edit</a>
-    <a id="del-comment" href='/jokes/<%=@joke.id%>/comments/<%=comment.id%>/delete'>Delete</a><br>
+  <% if current_user %>
+    <% if current_user.id == comment.user.id %>
+      <%= link_to "Edit", edit_comment_path(comment.id) %>
+      <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
   <% end %>
 </span>

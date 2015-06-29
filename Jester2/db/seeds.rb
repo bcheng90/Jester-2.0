@@ -21,7 +21,7 @@ users.each do |user|
   end
 end
 
-Joke.create(line1: "Why am I making jokes during my assessment/solo challenge?", line2: "Because I'm probably not gonna be listening to the joke during annoucements. Coding brain.", user_id: 1)
+Joke.create(line1: "Knock knock", line2: "Two guys walked into a bar.", user_id: 1)
 Joke.create(line1: "My grandpa has the heart of a lion, and a lifetime ban from the zoo.", user_id: 2)
 Joke.create(line1: "Could you please call me a taxi?", line2: "You're a taxi.", user_id: 3)
 Joke.create(line1: "How does a train eat?", line2: "It goes chew chew", user_id: 4)
@@ -38,11 +38,10 @@ Joke.create(line1: "There were two muffins in an oven. One says 'man it's hot in
 Joke.create(line1: "A magician was driving down the road when he turned into a driveway.", user_id: 13)
 Joke.create(line1: "Why aren't there any knock knock jokes about freedom?", line2: "Because freedom rings", user_id: 14)
 Joke.create(line1: "I went to a zoo the other day. It was completely empty, except for a single dog. It was a Shih Tzu.", user_id: 15)
-Joke.create(line1: "How many DBC students does it take to switch a lightbulb?", line2: "Two students pairing, one coach helping, and finger snaps ready when it's installed.", user_id: 16)
+Joke.create(line1: "What do you call a ghost at a hotel?", line2: "A inn spectre.", user_id: 16)
 Joke.create(line1: "What happened to the cow that jumped over the barbed wire fence?", line2: "Udder destruction", user_id: 17)
 Joke.create(line1: "How many 'Hoa's does it take to switch a lightbulb?", line2: "Hoane.", user_id: 18)
 ###Ashi, I repeated dan's joke on accident for yours! Mannnnnn. I'll try to think of another.
-Joke.create(line1: ".", user_id: 19)
+Joke.create(line1: "Why do bees stay in their hives in the winter?", line2: "Swarm.", user_id: 19)
 ##### Sorry, I was just copy+pastasing most of the jokes, I didn't realize that this one below was a super dirty one
-Joke.create(line1: "So this guy comes into a bar...
-No wait, a horse.", line2: "So this guy comes into a horse", user_id: 20)
+Joke.create(line1: "What's ET short for?", line2: "Because he's got little legs.", user_id: 20)
