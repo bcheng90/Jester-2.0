@@ -5,9 +5,11 @@
       <%= link_to "#{comment.user.name}", user_path(comment.user.id) %> said "<%= comment.message %>" for
       this joke
       <%= link_to "#{time(comment)} ago", joke_path(comment.joke_id)%><br>
-      <% if current_user.id == comment.user_id %>
-          <%= link_to "Edit", edit_comment_path(comment.id)%>
-          <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if current_user %>
+        <% if current_user.id == comment.user_id %>
+            <%= link_to "Edit", edit_comment_path(comment.id)%>
+            <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       <% end %>
     </span>
   </li>

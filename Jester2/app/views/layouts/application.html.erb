@@ -2,7 +2,12 @@
 <html>
 <head>
   <title>Jester2</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+<!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+
+<!-- JS -->
+  <%= stylesheet_link_tag   'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -37,8 +42,8 @@
       <% end %>
     </ul>
   </header>
-  <%= image_tag("laugh.png", id: "haha") %>
-<%= yield %>
+<%= image_tag("laugh.png", id: "haha") %>
 
+<%= yield %>
 </body>
 </html>

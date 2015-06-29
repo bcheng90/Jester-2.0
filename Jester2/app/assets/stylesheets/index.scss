@@ -51,14 +51,28 @@ header ul li {
   font-size: 20px;
 }
 
+#list-header a {
+  text-decoration: none;
+}
+
 body{
   background-color: #bdc3c7;
-  font-family: 'Share Tech Mono';
+  font-family: 'Arimo', sans-serif;
   position: relative;
 }
+
 .container {
  width: 80%;
  margin: auto;
+}
+
+#intro {
+  width: 50%;
+}
+
+#welcome {
+  font-size: 48px;
+  color: white;
 }
 
 #haha {

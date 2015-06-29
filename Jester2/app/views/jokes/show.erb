@@ -1,9 +1,11 @@
 <div class="container">
-  <% if current_user.id == @joke.user.id %>
-    <div class="edit">
-      <%= link_to 'Edit', edit_joke_path(@joke.id), locals: {joke_id: @joke.id} %> |
-      <%= link_to 'Delete', joke_path(@joke.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
+  <% if current_user %>
+    <% if current_user.id == @joke.user.id %>
+      <div class="edit">
+        <%= link_to 'Edit', edit_joke_path(@joke.id), locals: {joke_id: @joke.id} %> |
+        <%= link_to 'Delete', joke_path(@joke.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
   <% end %>
   <h1><%=@joke.line1%></h1>
   <span class="small">
@@ -18,7 +20,7 @@
       <%= render partial: "comments/new", locals: {joke_id: @joke.id} %>
     </div>
 
-    <div class="comment_list">
+    <div id="comment_list">
       <ul>
         <% @joke.comments.each do |comment| %>
           <li>

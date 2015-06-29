@@ -6,9 +6,11 @@
       <span class="small">
         <%= link_to "#{time(joke)} ago", joke_path(joke.id)%> |
         <%= link_to "#{joke.comments.count} comments", joke_path(joke.id)%>
-        <% if current_user.id == @user.id %>
-          <%= link_to 'Edit', edit_joke_path(joke.id)%> |
-          <%= link_to 'Delete', joke_path(joke.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% if current_user %>
+          <% if current_user.id == @user.id %>
+            <%= link_to 'Edit', edit_joke_path(joke.id)%> |
+            <%= link_to 'Delete', joke_path(joke.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
         <% end %>
       </span><br>
     </li><br>
