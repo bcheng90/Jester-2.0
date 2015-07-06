@@ -18,13 +18,25 @@
   border-bottom: 2px solid #8e44ad;
 }
 
+button {
+  background: #dae1e4;
+  border: none;
+  border-radius: 5px;
+  color: #1d3c6a;
+  font-size: 14px;
+  width: 400px;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
 header{
   height: 55px;
   background: url(joker.jpg);
   background-position: -5px;
   background-repeat: no-repeat;
   background-color: black;
-  border-bottom: 2px solid white;
   z-index: 10;
 }
 
@@ -59,6 +71,7 @@ body{
   background-color: #bdc3c7;
   font-family: 'Arimo', sans-serif;
   position: relative;
+  margin: 0px;
 }
 
 .container {
@@ -150,7 +163,7 @@ ul li {
 
 .edit{
   border: 2px inset #8e44ad;
-  width: 115px;
+  width: 90px;
 }
 
 a {
