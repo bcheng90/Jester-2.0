@@ -13,7 +13,9 @@
     and <%= rand(1..10)%> laughes for
     <%= link_to "#{@joke.user.name}", user_path(@joke.user.id)%> | <%= link_to "#{time(@joke)} ago", joke_path(@joke.id)%>
   </span>
-  <p class="hr"><%=@joke.line2%></p>
+  <p id="funny2" class="hr">
+    <span id="line2"><%=@joke.line2%></span>
+  </p>
   <div class="comments">
     <% if current_user %>
       <div class="comment_box">
