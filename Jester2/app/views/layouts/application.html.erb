@@ -5,7 +5,7 @@
 
 <!-- Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
-
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <!-- JS -->
   <%= stylesheet_link_tag   'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -18,11 +18,12 @@
         <%= link_to "Jester", root_path %>
       </li>
       <% if current_user %>
-      <li id="list-header"> |
-        <%= link_to "New", new_joke_path %>
-      </li>
+        <li id="list-header"> |
+          <%= link_to "New", new_joke_path %>
+        </li>
       <% end %>
     </ul>
+
     <ul class="right">
       <% if current_user %>
         <li id="list-header">
@@ -41,9 +42,39 @@
         </li>
       <% end %>
     </ul>
-  </header>
-<%= image_tag("laugh.png", id: "haha") %>
 
-<%= yield %>
+    <i id="list" class="fa fa-bars fa-2x"></i>
+  </header>
+
+    <div id="navlist">
+      <ul>
+        <li id="list-header">
+        <%= link_to "Jester", root_path %>
+        </li>
+        <% if current_user %>
+          <li id="list-header">
+            <%= link_to "New", new_joke_path %>
+          </li>
+          <li id="list-header">
+            <%= link_to "#{current_user.name}", user_path(current_user.id) %>
+          </li>
+          <li id="list-header">
+            <!-- TODO: Broked the logout -->
+            <%= link_to 'Logout', logout_path, data: { confirm: 'Logging out?' } %>
+          </li>
+        <% else %>
+          <li id="list-header">
+            <%= link_to "Login", login_path %>
+          </li>
+          <li id="list-header">
+            <%= link_to "Sign up", signup_path %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+  <%= image_tag("laugh.png", id: "haha") %>
+
+  <%= yield %>
 </body>
 </html>
