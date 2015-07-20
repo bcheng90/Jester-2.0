@@ -1,6 +1,6 @@
 <span class="small">
   <%= link_to "#{comment.user.name}", user_path(comment.user_id) %>
-  <%=time(comment)%> days ago</span><br>
+  <%=time(comment)%> ago</span><br>
   <div id="message">
     <%= comment.message %><br>
   </div>

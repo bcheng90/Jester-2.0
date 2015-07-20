@@ -2,6 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#navlist{
+  display: block;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  background-color: black;
+  z-index: 1;
+}
+
+#navlist li {
+  padding: 20px 0px;
+}
+
 .center {
   text-align: center;
 }
@@ -172,4 +185,32 @@ a {
 
 a:hover {
   color: #69BB01;
+}
+
+#list {
+  color: white;
+  float: right;
+  padding: 10.5px;
+}
+
+#list:hover {
+  color: #69BB01;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  header ul {
+    display:none;
+  }
+  #navlist {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  header #list {
+    display:none;
+  }
+  #navlist {
+    display: none;
+  }
 }
