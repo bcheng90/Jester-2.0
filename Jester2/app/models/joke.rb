@@ -11,6 +11,7 @@ class Joke < ActiveRecord::Base
 
   # def self.most_commented
   #   all.sort_by do |question|
-  #     question.comments
+  #     question.comments.count
+  #   end.reduce(0, :+)
   # end
 end
